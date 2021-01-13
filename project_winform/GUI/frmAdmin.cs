@@ -426,7 +426,7 @@ namespace project_winform
         }
         public SanPham KT_SanPhamTonTai(LinkedList<SanPham> list, string maSP)
         {
-            for (LinkedListNode<SanPham> p = list.First; p != list.Last; p = p.Next)
+            for (LinkedListNode<SanPham> p = list.First; p != null; p = p.Next)
             {
                 if (p.Value.MaSP == maSP && p.Value.TrangThai != 0)
                 {
@@ -496,7 +496,8 @@ namespace project_winform
         }
         private void btnXacNhanXoaNhanVien_Click(object sender, EventArgs e)
         {
-            if (LayNVTuMaNV(txtMaNhanVienCanXoa.Text) == null)
+            NhanVien nv = LayNVTuMaNV(txtMaNhanVienCanXoa.Text);
+            if (nv == null)
             {
                 MessageBox.Show($"Nhân viên {txtMaNhanVienCanXoa.Text} không tồn tại !");
                 txtMaNhanVienCanXoa.Text = "";
@@ -509,7 +510,7 @@ namespace project_winform
                 }
                 else
                 {
-                    DialogResult dia = MessageBox.Show($"Bạn chắc chắn muốn xóa {txtMaNhanVienCanXoa.Text}", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult dia = MessageBox.Show($"Bạn chắc chắn muốn xóa {nv.HoTen1}", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dia == DialogResult.Yes)
                     {
                         if (NhanVien_BUS.DeleteDataNhanVien(txtMaNhanVienCanXoa.Text))
@@ -820,7 +821,15 @@ namespace project_winform
             if (cboLoc.Items.Count == 0) return false;
             for (int i = 0; i < cboLoc.Items.Count; i++)
             {
-                string maCbo = Convert.ToDateTime(cboLoc.Items[i].ToString()).ToString("dd/MM/yyyy");
+                string maCbo = "";
+                try
+                {
+                    maCbo = Convert.ToDateTime(cboLoc.Items[i].ToString()).ToString("dd/MM/yyyy");
+                }
+                catch
+                {
+                    maCbo = cboLoc.Items[i].ToString();
+                }
                 if (String.Compare(ma, maCbo) == 0)
                 {
                     return true;

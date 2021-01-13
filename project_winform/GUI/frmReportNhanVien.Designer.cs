@@ -51,7 +51,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReportNhanVien";
-            this.Text = "frmReportNhanVien";
+            this.Text = "Report Nhân viên";
             this.Load += new System.EventHandler(this.frmReportNhanVien_Load);
             this.ResumeLayout(false);
 

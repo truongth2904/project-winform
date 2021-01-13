@@ -39,7 +39,7 @@ namespace project_winform.BUS
         public static SanPham getDataSanPhamWithMaSP(string MaSP)
         {
             LinkedList<SanPham> list = getAllSanPham();
-            for (LinkedListNode<SanPham> p = list.First; p != list.Last; p = p.Next)
+            for (LinkedListNode<SanPham> p = list.First; p != null; p = p.Next)
             {
                 if (p.Value.MaSP == MaSP)
                 {
