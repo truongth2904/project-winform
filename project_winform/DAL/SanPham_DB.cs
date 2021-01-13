@@ -124,5 +124,16 @@ namespace project_winform.DAL
             adapter.Fill(table);
             return table;
         }
+        // Thống kê doanh thu từ số lượng bán ra của các loại sản phẩm:
+        public static DataTable getDoanhThu()
+        {
+            string query = "spBaoCaoDoanhThuTuCacSP";
+            DataTable table = new DataTable();
+            SqlCommand commd = new SqlCommand(query, connectDB);
+            commd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(commd);
+            adapter.Fill(table);
+            return table;
+        }
     }
 }

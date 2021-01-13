@@ -236,7 +236,6 @@ C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winf
 C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\bin\Debug\stdole.dll
 C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
-C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\obj\Debug\project_winform.csprojAssemblyReference.cache
 C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\obj\Debug\project_winform.frmAdmin.resources
 C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\obj\Debug\project_winform.frmChucNangNV.resources
 C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\obj\Debug\project_winform.frmKhachHang.resources
@@ -254,3 +253,5 @@ C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winf
 C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\obj\Debug\project_winform.csproj.CopyComplete
 C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\obj\Debug\project_winform.exe
 C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\obj\Debug\project_winform.pdb
+C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\obj\Debug\project_winform.csprojAssemblyReference.cache
+C:\Users\truon\Desktop\DoAn_LTUD_Truong_Minh_Vinh__\project_winform\project_winform\obj\Debug\project_winform.frmReportDoanhThuSanPham.resources

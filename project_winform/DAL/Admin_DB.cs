@@ -17,7 +17,7 @@ namespace project_winform.DAL
             if (dta.Rows.Count <= 0) return null;
             return dta;
         }
-
+        // thay doi thong tin admin
         public static bool changeInFoAdmin(Admin admin)
         {
             string query = "spChangeInFoAdmin";

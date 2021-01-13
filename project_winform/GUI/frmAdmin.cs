@@ -79,6 +79,11 @@ namespace project_winform
             grThongTinAdmin.Controls.Add(btnThayDoiMtKhauAD);
 
             #endregion
+
+            //Cho pass các kí hiệu:
+            txtMatKhauHienTaiAD.PasswordChar = '*';
+            txtMatKhauMoiAD.PasswordChar = '*';
+            txtXacNhanMatKhauMoi.PasswordChar = '*';
         }
         private void btnThayDoiMtKhauAD_Click(object sender, EventArgs e)
         {
@@ -1035,6 +1040,11 @@ namespace project_winform
             {
                 dgvDanhSach.DataSource = KhachHang_BUS.SearchOnMaKH(txtTimKiem.Text);
             }
+        }
+
+        private void btnBaoCaoDoanhThuCuaTungLoaiSanPham_Click(object sender, EventArgs e)
+        {
+            new frmReportDoanhThuSanPham().Show();
         }
     }
 }

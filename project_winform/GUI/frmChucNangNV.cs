@@ -41,6 +41,9 @@ namespace project_winform
             txtSoHoaDonDaLap.Text = nhanvien.SoHoaDonDaLap1.ToString();
             txtLuongCB.Text = nhanvien.LuongCB1.ToString();
             txtLoaiNV.Text = nhanvien.LoaiNV1;
+            txtMatKhauHienTai.PasswordChar = '*';
+            txtNhapMatKhauMoi.PasswordChar = '*';
+            txtNhapLaiMatKhauMoi.PasswordChar = '*';
         }
         private void btnThayDoiMatKhau_Click(object sender, EventArgs e)
         {
@@ -65,7 +68,7 @@ namespace project_winform
         }
         private void txtMatKhauHienTai_Leave(object sender, EventArgs e)
         {
-            if (txtMatKhauHienTai.Text != nhanvien.Password )
+            if (txtMatKhauHienTai.Text != nhanvien.Password)
             {
                 MessageBox.Show("Sai mật khẩu hiện tại !");
                 txtMatKhauHienTai.Text = "";

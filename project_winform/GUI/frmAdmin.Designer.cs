@@ -177,6 +177,7 @@
             this.btnXoaKhachHang = new System.Windows.Forms.Button();
             this.btnThemKhachHang = new System.Windows.Forms.Button();
             this.grXemDS = new System.Windows.Forms.GroupBox();
+            this.btnBaoCaoDoanhThuCuaTungLoaiSanPham = new System.Windows.Forms.Button();
             this.btnreportKhachHang = new System.Windows.Forms.Button();
             this.btnreportNhanVien = new System.Windows.Forms.Button();
             this.btnreportHoaDon = new System.Windows.Forms.Button();
@@ -189,7 +190,6 @@
             this.btnDanhSachNhanVien = new System.Windows.Forms.Button();
             this.btnDanhSachHoaDon = new System.Windows.Forms.Button();
             this.btnDanhSachSanPham = new System.Windows.Forms.Button();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
             this.btnThoat = new System.Windows.Forms.Button();
             this.grFullHoaDon = new System.Windows.Forms.GroupBox();
@@ -1654,6 +1654,7 @@
             // 
             // grXemDS
             // 
+            this.grXemDS.Controls.Add(this.btnBaoCaoDoanhThuCuaTungLoaiSanPham);
             this.grXemDS.Controls.Add(this.btnreportKhachHang);
             this.grXemDS.Controls.Add(this.btnreportNhanVien);
             this.grXemDS.Controls.Add(this.btnreportHoaDon);
@@ -1666,13 +1667,22 @@
             this.grXemDS.Controls.Add(this.btnDanhSachNhanVien);
             this.grXemDS.Controls.Add(this.btnDanhSachHoaDon);
             this.grXemDS.Controls.Add(this.btnDanhSachSanPham);
-            this.grXemDS.Controls.Add(this.btnTimKiem);
             this.grXemDS.Controls.Add(this.dgvDanhSach);
             this.grXemDS.Location = new System.Drawing.Point(209, 149);
             this.grXemDS.Name = "grXemDS";
             this.grXemDS.Size = new System.Drawing.Size(1222, 505);
             this.grXemDS.TabIndex = 10;
             this.grXemDS.TabStop = false;
+            // 
+            // btnBaoCaoDoanhThuCuaTungLoaiSanPham
+            // 
+            this.btnBaoCaoDoanhThuCuaTungLoaiSanPham.Location = new System.Drawing.Point(413, 43);
+            this.btnBaoCaoDoanhThuCuaTungLoaiSanPham.Name = "btnBaoCaoDoanhThuCuaTungLoaiSanPham";
+            this.btnBaoCaoDoanhThuCuaTungLoaiSanPham.Size = new System.Drawing.Size(327, 29);
+            this.btnBaoCaoDoanhThuCuaTungLoaiSanPham.TabIndex = 10;
+            this.btnBaoCaoDoanhThuCuaTungLoaiSanPham.Text = "Báo cáo doanh thu của từng loại sản phẩm";
+            this.btnBaoCaoDoanhThuCuaTungLoaiSanPham.UseVisualStyleBackColor = true;
+            this.btnBaoCaoDoanhThuCuaTungLoaiSanPham.Click += new System.EventHandler(this.btnBaoCaoDoanhThuCuaTungLoaiSanPham_Click);
             // 
             // btnreportKhachHang
             // 
@@ -1789,16 +1799,6 @@
             this.btnDanhSachSanPham.Text = "Danh sách sản phẩm";
             this.btnDanhSachSanPham.UseVisualStyleBackColor = true;
             this.btnDanhSachSanPham.Click += new System.EventHandler(this.btnDanhSachSanPham_Click);
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(970, 202);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(91, 29);
-            this.btnTimKiem.TabIndex = 1;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // dgvDanhSach
             // 
@@ -2155,7 +2155,6 @@
         private System.Windows.Forms.Button btnDanhSachNhanVien;
         private System.Windows.Forms.Button btnDanhSachHoaDon;
         private System.Windows.Forms.Button btnDanhSachSanPham;
-        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.DataGridView dgvDanhSach;
         private System.Windows.Forms.Button btnXoaTimKiem;
         private System.Windows.Forms.ComboBox cboLoc;
@@ -2176,5 +2175,6 @@
         private System.Windows.Forms.Button btnreportNhanVien;
         private System.Windows.Forms.Button btnreportHoaDon;
         private System.Windows.Forms.Button btnreportSanPham;
+        private System.Windows.Forms.Button btnBaoCaoDoanhThuCuaTungLoaiSanPham;
     }
 }

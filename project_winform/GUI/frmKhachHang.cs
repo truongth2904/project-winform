@@ -59,7 +59,11 @@ namespace project_winform
             this.Controls.Remove(btnLuuMatKhau);
             txtMatKhauHienTai.Text = "";
             txtNhapLaiMatKhauMoi.Text = "";
-            txtMatKhauHienTai.Text = "";
+            txtNhapMatKhauMoi.Text = "";
+
+            txtMatKhauHienTai.PasswordChar = '*';
+            txtNhapLaiMatKhauMoi.PasswordChar = '*';
+            txtNhapMatKhauMoi.PasswordChar = '*';
         }
         private void btnThayDoiMatKhau_Click(object sender, EventArgs e)
         {

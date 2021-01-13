@@ -77,5 +77,9 @@ namespace project_winform.BUS
         {
             return SanPham_DB.getLoc(LoaiSP);
         }
+        public static DataTable getDoanhThuLoaiSP()
+        {
+            return SanPham_DB.getDoanhThu();
+        }
     }
 }

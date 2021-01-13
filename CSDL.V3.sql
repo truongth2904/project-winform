@@ -328,7 +328,7 @@ GO
 CREATE PROCEDURE sp_SearchOnMaSP
 @MaSP nvarchar(20) AS
 BEGIN
-	SELECT * FROM SANPHAM WHERE SANPHAM.MaSP LIKE @MaSP + '%'
+	SELECT * FROM SANPHAM WHERE SANPHAM.TenSP LIKE @MaSP + '%'
 END 
 GO
 --- Tìm kiếm hóa đơn
@@ -342,14 +342,14 @@ GO
 CREATE PROCEDURE sp_SearchOnMaNV
 @MaNV nvarchar(20) as
 BEGIN 
-	SELECT * FROM NHANVIEN WHERE NHANVIEN.MaNV LIKE @MaNV + '%'
+	SELECT * FROM NHANVIEN WHERE NHANVIEN.HoTen LIKE @MaNV + '%'
 END 
 GO
 ---Tìm kiếm khách hàng
 CREATE PROCEDURE sp_SearchOnMaKH
 @MaKH nvarchar(20) as
 BEGIN 
-	SELECT * FROM KHACHHANG WHERE KHACHHANG.MaKH LIKE @MaKH + '%'
+	SELECT * FROM KHACHHANG WHERE KHACHHANG.HoTen LIKE @MaKH + '%'
 END 
 GO
 --- Thêm hóa đơn:
@@ -465,4 +465,10 @@ CREATE PROCEDURE spXoaHoaDon
 @MaHD nvarchar(20) as
 begin
 	update HOADON set TrangThai=0 where MaHD=@MaHD
+end
+go
+--- Báo cáo tổng sản phẩm đã bán:
+CREATE PROCEDURE spBaoCaoDoanhThuTuCacSP
+as begin
+SELECT LoaiSP, SUM(GiaBan*SoLuongBanRa) AS 'Tong' FROM  SANPHAM WHERE SANPHAM.SoLuongBanRa > 0 GROUP BY SANPHAM.LoaiSP
 end
