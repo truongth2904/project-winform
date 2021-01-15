@@ -55,16 +55,39 @@ namespace project_winform
         {
             if (txtSDT.Text.Trim().Length == 0 || txtDiaChi.Text.Trim().Length == 0)
             {
+
                 MessageBox.Show("Không được để trống địa chỉ hoặc số điện thoại !", "Thông báo");
             }
             else
             {
-                nhanvien.DiaChi1 = txtDiaChi.Text;
-                nhanvien.SDT1 = txtSDT.Text;
-                NhanVien_BUS.UpdateNhanVien(nhanvien);
-                MessageBox.Show("Cập nhật thành công !");
-                frmChucNangNV_Load(sender, e);
+                if (KT_SDT(txtSDT.Text)==false)
+                {
+                    MessageBox.Show("Vui long nhap dung sdt !");
+                }
+                else
+                {
+                    nhanvien.DiaChi1 = txtDiaChi.Text;
+                    nhanvien.SDT1 = txtSDT.Text;
+                    if (NhanVien_BUS.UpdateNhanVien(nhanvien))
+                    {
+                        MessageBox.Show("Cập nhật thành công !");
+                    }
+                    frmChucNangNV_Load(sender, e);
+                }
             }
+        }
+        public bool KT_SDT(string sdt)
+        {
+            bool isNumeric = true;
+            foreach (char c in sdt)
+            {
+                if (!Char.IsNumber(c))
+                {
+                    isNumeric = false;
+                    break;
+                }
+            }
+            return isNumeric;
         }
         private void txtMatKhauHienTai_Leave(object sender, EventArgs e)
         {

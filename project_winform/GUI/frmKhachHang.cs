@@ -28,11 +28,18 @@ namespace project_winform
             }
             else
             {
-                khachhang.DiaChi1 = txtDiaChi.Text;
-                khachhang.SDT1 = txtSDT.Text;
-                KhachHang_BUS.UpdateDataKhachHang(khachhang);
-                MessageBox.Show("Cập nhật thành công !");
-                frmKhachHang_Load(sender, e);
+                if (KT_SDT(txtSDT.Text) == false)
+                {
+                    MessageBox.Show("Vui long nhap dung sdt");
+                }
+                else
+                {
+                    khachhang.DiaChi1 = txtDiaChi.Text;
+                    khachhang.SDT1 = txtSDT.Text;
+                    KhachHang_BUS.UpdateDataKhachHang(khachhang);
+                    MessageBox.Show("Cập nhật thành công !");
+                    frmKhachHang_Load(sender, e);
+                }
             }
         }
         private void frmKhachHang_Load(object sender, EventArgs e)
@@ -101,6 +108,19 @@ namespace project_winform
                 this.Close();
                 Application.Exit();
             }
+        }
+        public bool KT_SDT(string sdt)
+        {
+            bool isNumeric = true;
+            foreach (char c in sdt)
+            {
+                if (!Char.IsNumber(c))
+                {
+                    isNumeric = false;
+                    break;
+                }
+            }
+            return isNumeric;
         }
     }
 }

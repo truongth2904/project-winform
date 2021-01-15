@@ -101,21 +101,29 @@ namespace project_winform
                     {
                         password = txtXacNhanMatKhauMoi.Text;
                     }
+
                     Admin admin = new Admin(frmMain.admin.Username, password, frmMain.admin.MaAD1, txtHoTenAD.Text, Convert.ToDateTime(txtNgaySinhAD.Text), txtCMNDAD.Text, txtSDTAdmin.Text, txtDiaChi.Text, 1);
-                    if (Admin_BUS.changeInFo(admin))
+                    if (KT_SDT(admin.SDT1) == false)
                     {
-                        MessageBox.Show("Thay đổi thông tin thành công !");
-                        lblMatKhauLoi.Text = "";
-                        lblThongTinAdminLoi.Text = "";
-                        grThongTinAdmin.Controls.Remove(grThayDoiMatKhauAD);
-                        grThongTinAdmin.Controls.Add(btnThayDoiMtKhauAD);
-                        txtMatKhauHienTaiAD.Text = "";
-                        txtMatKhauMoiAD.Text = "";
-                        txtXacNhanMatKhauMoi.Text = "";
+                        MessageBox.Show("Vui long nhap dung sdt");
                     }
                     else
                     {
-                        MessageBox.Show("Thay đổi không thành công !");
+                        if (Admin_BUS.changeInFo(admin))
+                        {
+                            MessageBox.Show("Thay đổi thông tin thành công !");
+                            lblMatKhauLoi.Text = "";
+                            lblThongTinAdminLoi.Text = "";
+                            grThongTinAdmin.Controls.Remove(grThayDoiMatKhauAD);
+                            grThongTinAdmin.Controls.Add(btnThayDoiMtKhauAD);
+                            txtMatKhauHienTaiAD.Text = "";
+                            txtMatKhauMoiAD.Text = "";
+                            txtXacNhanMatKhauMoi.Text = "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thay đổi không thành công !");
+                        }
                     }
                 }
             }
@@ -1045,6 +1053,19 @@ namespace project_winform
         private void btnBaoCaoDoanhThuCuaTungLoaiSanPham_Click(object sender, EventArgs e)
         {
             new frmReportDoanhThuSanPham().Show();
+        }
+        public bool KT_SDT(string sdt)
+        {
+            bool isNumeric = true;
+            foreach (char c in sdt)
+            {
+                if (!Char.IsNumber(c))
+                {
+                    isNumeric = false;
+                    break;
+                }
+            }
+            return isNumeric;
         }
     }
 }
